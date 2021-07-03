@@ -1,0 +1,66 @@
+{
+  "root": true,
+  "parserOptions": {
+    "ecmaVersion": 2021,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "plugins": ["testing-library", "jest-dom", "unused-imports"],
+  "extends": [
+    "eslint:recommended",
+    "eslint-config-prettier",
+    "react-app",
+    "react-app/jest",
+    "plugin:testing-library/react",
+    "plugin:jest-dom/recommended",
+    "plugin:json/recommended"
+  ],
+  "rules": {
+    "strict": ["error", "never"],
+    "eqeqeq": "warn",
+    "no-throw-literal": "warn",
+    "unused-imports/no-unused-imports": "error",
+    "unused-imports/no-unused-vars": [
+      "warn",
+      {
+        "vars": "all",
+        "varsIgnorePattern": "^_",
+        "args": "after-used",
+        "argsIgnorePattern": "^_"
+      }
+    ]
+  },
+  "env": {
+    "browser": true
+  },
+  "overrides": [
+    {
+      "files": "**/*.+(ts|tsx)",
+      "parser": "@typescript-eslint/parser",
+      "parserOptions": {
+        "project": "./tsconfig.json"
+      },
+      "plugins": ["@typescript-eslint/eslint-plugin"],
+      "extends": [
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended",
+        "eslint-config-prettier"
+      ],
+      "rules": {
+        "@typescript-eslint/semi": "warn",
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/explicit-module-boundary-types": "off"
+      }
+    },
+    {
+      "files": ["**/*.stories.*"],
+      "rules": {
+        "import/no-anonymous-default-export": "off"
+      }
+    }
+  ],
+
+  "ignorePatterns": ["**/*.d.ts"]
+}

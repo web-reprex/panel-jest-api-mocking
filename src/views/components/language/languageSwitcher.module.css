@@ -1,0 +1,7 @@
+.languageSwitcher {
+  color: rgb(196, 70, 168);
+  border: none;
+  padding: 5px;
+  background-color: rgba(158, 165, 165, 0.151);
+  cursor: pointer;
+}
